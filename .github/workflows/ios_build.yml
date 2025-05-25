@@ -13,6 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Check Xcode version
+        run: |
+          ls /Applications | grep Xcode || echo "No Xcode found"
+          xcodebuild -version
+
       - name: Check available Xcode versions and current xcodebuild version
         run: |
           echo "Available Xcode versions in /Applications:"
