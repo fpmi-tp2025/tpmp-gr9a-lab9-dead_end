@@ -1,49 +1,52 @@
-# Xcode
-build/
+# === Xcode ===
 DerivedData/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
+build/
+*.xcworkspace/
 xcuserdata/
-*.xcscmblueprint
+*.xcuserstate
 *.xccheckout
+*.moved-aside
+*.xcscmblueprint
+.idea/
 
-# SwiftPM
+# === SwiftPM (если используешь Swift Package Manager) ===
 .build/
-Package.resolved
+Packages/
+.swiftpm/
 
-# CocoaPods
+# === CocoaPods (если используешь Pods) ===
 Pods/
 Podfile.lock
-*.xcworkspace
 
-# Carthage
-Carthage/Build/
+# === Carthage (если вдруг используешь) ===
+Carthage/
 
-# Fastlane
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/
-fastlane/test_output/
-
-# Archives
-*.xcarchive
-*.ipa
-*.dSYM.zip
-*.dSYM
-
-# Misc
+# === General macOS Files ===
+.DS_Store
 *.swp
 *.lock
-*.tmp
-*.orig
-.DS_Store
 *.log
+*.orig
+*.backup
+*.tmp
 
-# Firebase / GoogleService plist (если используется)
-GoogleService-Info.plist
+# === User data ===
+*.plist~
+*.xcuserdatad/
+*.xcuserstate
+
+# === Fastlane (если используешь) ===
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# === Xcode Preview Cache ===
+*.canvas
+*.xcassets/*.imageset/*.DS_Store
+
+# === Testing artifacts ===
+*.xctest
+
+# === Optional: локальные конфиги и пользовательские данные ===
+*.env
+*.local
