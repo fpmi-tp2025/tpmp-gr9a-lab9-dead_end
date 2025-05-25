@@ -2,26 +2,32 @@
 DerivedData/
 build/
 *.xcworkspace/
-xcuserdata/
 *.xcuserstate
 *.xccheckout
 *.moved-aside
 *.xcscmblueprint
 .idea/
 
-# === SwiftPM (если используешь Swift Package Manager) ===
+# Не игнорировать основной файл проекта
+!plantify.xcodeproj/project.pbxproj
+!plantify.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+
+# Игнорировать только пользовательские данные
+plantify.xcodeproj/xcuserdata/
+
+# === SwiftPM ===
 .build/
 Packages/
 .swiftpm/
 
-# === CocoaPods (если используешь Pods) ===
+# === CocoaPods ===
 Pods/
 Podfile.lock
 
-# === Carthage (если вдруг используешь) ===
+# === Carthage ===
 Carthage/
 
-# === General macOS Files ===
+# === macOS системные файлы ===
 .DS_Store
 *.swp
 *.lock
@@ -35,7 +41,7 @@ Carthage/
 *.xcuserdatad/
 *.xcuserstate
 
-# === Fastlane (если используешь) ===
+# === Fastlane ===
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
@@ -47,6 +53,6 @@ fastlane/screenshots
 # === Testing artifacts ===
 *.xctest
 
-# === Optional: локальные конфиги и пользовательские данные ===
+# === Конфиги и чувствительные данные ===
 *.env
 *.local
