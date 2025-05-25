@@ -1,0 +1,2 @@
+# Презентация проекта 
+Презентация нашего проекта находиться по ссылке: [ссылка](https://www.figma.com/proto/O8C6N4DNUQWxWIhJdjNRyR/plantify?page-id=0%3A1&node-id=1-281&viewport=-275%2C-14%2C0.06&t=TuWHB0CWCuDh7Dek-1&scaling=scale-down&content-scaling=fixed)
