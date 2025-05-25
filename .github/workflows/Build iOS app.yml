@@ -1,4 +1,4 @@
-name: Build iOS app on self-hosted Mac
+name: Build iOS app on self-hosted Macbook
 
 on:
   push:
