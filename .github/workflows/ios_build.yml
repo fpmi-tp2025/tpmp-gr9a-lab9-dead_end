@@ -50,7 +50,7 @@ jobs:
           xcodebuild -project plantify/plantify.xcodeproj \
                      -scheme plantify \
                      -sdk iphonesimulator \
-                     -destination 'platform=iOS Simulator,name=iPhone 16 pro' \
+                     -destination 'platform=iOS Simulator,name=iPhone 14 pro' \
                      -derivedDataPath build \
                      clean build
 
