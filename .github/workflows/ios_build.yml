@@ -25,6 +25,16 @@ jobs:
           echo "xcodebuild version:"
           xcodebuild -version
 
+      - name: Verify Xcode version >= 16.0
+        run: |
+          XCODE_VER=$(xcodebuild -version | grep Xcode | awk '{print $2}')
+          echo "Detected Xcode version: $XCODE_VER"
+          REQUIRED="16.0"
+          if [[ $(echo -e "$XCODE_VER\n$REQUIRED" | sort -V | head -n1) != "$REQUIRED" ]]; then
+            echo "Xcode version ($XCODE_VER) is less than required $REQUIRED. Build will fail."
+            exit 1
+          fi
+
       - name: Set up Xcode 16.3 (if available)
         run: sudo xcode-select -s /Applications/Xcode_16.3.app || echo "Xcode 16.3 not found, using default Xcode"
 
