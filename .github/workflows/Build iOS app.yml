@@ -1,0 +1,35 @@
+name: Build iOS app on self-hosted Mac
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install dependencies (if CocoaPods)
+        run: |
+          if [ -f Podfile ]; then
+            pod install
+          fi
+
+      - name: Build app with xcodebuild
+        run: |
+          xcodebuild clean build \
+            -project plantify/plantify.xcodeproj \
+            -scheme plantify \
+            -sdk iphonesimulator \
+            -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
+            -derivedDataPath build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ios-build
+          path: build
